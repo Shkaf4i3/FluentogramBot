@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "languageproject"
+version = "0.1.0"
+description = ""
+authors = ["Shkaf4i3 <fleximes@protonmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiogram = "^3.15.0"
+pydantic-settings = "^2.6.1"
+fluentogram = "^1.1.7"
+psqlpy = "^0.8.5"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
