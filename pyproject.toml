@@ -7,15 +7,15 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
-aiogram = "^3.15.0"
-pydantic-settings = "^2.6.1"
-fluentogram = "^1.1.7"
-psqlpy = "^0.8.5"
+python = "^3.13"
+aiogram = "^3.20.0.post0"
+pydantic-settings = "^2.9.1"
+fluentogram = "^1.1.10"
+psqlpy = "^0.10.1"
 
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.7.4"
+ruff = "^0.11.8"
 
 [build-system]
 requires = ["poetry-core"]
