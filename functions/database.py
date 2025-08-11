@@ -1,17 +1,15 @@
 from asyncio import sleep
 
 from psqlpy import ConnectionPool, QueryResult
-from psqlpy.extra_types import BigInt, PyText
+from psqlpy.extra_types import BigInt
 
 from functions.config_reader import config
 
 
-db_pool = ConnectionPool(password=config.password,
-                         db_name=config.dbname,
-                         username=config.user,
-                         host=config.host,
-                         port=config.port,
-                         max_db_pool_size=5)
+db_pool = ConnectionPool(
+    dsn=config.dsn,
+    max_db_pool_size=5,
+)
 
 
 async def create_table() -> None:
@@ -62,7 +60,7 @@ async def update_lang_user(tg_id: int, lang: str) -> None:
 
     await cursor.execute(
         querystring='UPDATE Users SET lang = ($1) WHERE tg_id = ($2)',
-        parameters=[PyText(lang), BigInt(tg_id)]
+        parameters=[lang, BigInt(tg_id)]
     )
     await cursor.commit()
 
